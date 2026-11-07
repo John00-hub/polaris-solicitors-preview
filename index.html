@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris Solicitors — Homepage Concept | Midex Edits</title>
+<meta name="description" content="Independent homepage design concept for Polaris Solicitors, Wuse 2, Abuja — prepared for review by Midex Edits. Not the firm's official website.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#080C14">
+<meta property="og:title" content="Polaris Solicitors — Homepage Concept">
+<meta property="og:description" content="A design concept prepared for review. Corporate, commercial and litigation counsel in Wuse 2, Abuja.">
+<meta property="og:type" content="website">
+
+<script>document.documentElement.className += " js";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080C14'/%3E%3Cpath d='M16 4l2.6 9.4L28 16l-9.4 2.6L16 28l-2.6-9.4L4 16l9.4-2.6z' fill='%23C6A15B'/%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   POLARIS SOLICITORS — HOMEPAGE CONCEPT
+   Direction: "The fixed point" — North Star / compass rose
+   Palette: ink navy · brass gold · warm paper
+   Single file. No external dependencies except an optional
+   Google Font (graceful fallback to Georgia / system sans).
+   ============================================================ */
+
+:root{
+  --ink:#080C14;
+  --ink-2:#0C1320;
+  --ink-3:#111A2B;
+  --navy:#16233C;
+  --paper:#F7F4ED;
+  --paper-2:#EFEAE0;
+  --gold:#C6A15B;
+  --gold-2:#DFC28A;
+  --gold-dim:rgba(198,161,91,.34);
+  --gold-faint:rgba(198,161,91,.14);
+  --text:#15181D;
+  --muted:#6A6C70;
+  --muted-lt:#9AA0AA;
+  --line-d:rgba(255,255,255,.10);
+  --line-l:rgba(21,24,29,.12);
+
+  --serif:"Playfair Display","Didot","Bodoni MT",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+  --pad:clamp(20px,5vw,64px);
+  --maxw:1220px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font-family:var(--sans);font-weight:400;
+  font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold);color:var(--ink)}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+[id]{scroll-margin-top:92px}
+section{position:relative}
+
+/* ---------- typography helpers ---------- */
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 22px;
+}
+.eyebrow::before{content:"";width:38px;height:1px;background:var(--gold);opacity:.75;flex:none}
+.eyebrow.on-paper{color:#8A6B2F}
+.eyebrow.on-paper::before{background:#8A6B2F}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em;line-height:1.06}
+h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.05}
+h3{font-size:clamp(1.18rem,1.5vw,1.42rem);line-height:1.24;letter-spacing:-.005em}
+em{font-style:italic}
+.gold{color:var(--gold)}
+.lede{font-size:clamp(1rem,1.15vw,1.1rem);line-height:1.78;color:var(--muted);max-width:58ch}
+.on-dark .lede{color:var(--muted-lt)}
+.on-dark{background:var(--ink);color:var(--paper)}
+.rule{height:1px;background:var(--line-l);border:0;margin:0}
+.on-dark .rule{background:var(--line-d)}
+
+/* ---------- concept notice bar ---------- */
+.notice{
+  position:relative;z-index:60;
+  background:var(--ink-2);color:var(--gold-2);
+  border-bottom:1px solid var(--gold-faint);
+  font-size:11.5px;letter-spacing:.055em;
+}
+.notice .wrap{display:flex;align-items:center;justify-content:center;gap:12px;padding-block:9px;text-align:center}
+.notice b{color:var(--paper);font-weight:500}
+.notice .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none}
+.notice button{
+  position:absolute;right:var(--pad);top:50%;transform:translateY(-50%);
+  color:var(--muted-lt);font-size:15px;line-height:1;padding:4px 6px;border-radius:3px;
+}
+.notice button:hover{color:var(--paper)}
+.notice.is-hidden{display:none}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(8,12,20,.86);
+  backdrop-filter:saturate(130%) blur(14px);
+  -webkit-backdrop-filter:saturate(130%) blur(14px);
+  border-bottom:1px solid var(--line-d);
+  transition:background .35s var(--ease),border-color .35s var(--ease);
+}
+.site-header.is-scrolled{background:rgba(8,12,20,.97);border-bottom-color:var(--gold-dim)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:15px}
+.brand{display:flex;align-items:center;gap:13px;color:var(--paper)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-name{
+  font-family:var(--serif);font-size:19px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--paper);
+}
+.brand-sub{
+  font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  margin-top:5px;font-weight:500;
+}
+.nav{display:flex;align-items:center;gap:clamp(14px,2vw,30px)}
+.nav a{
+  font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:#C8CCD4;
+  padding-block:6px;position:relative;transition:color .25s;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.nav a:hover{color:var(--paper)}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr-cta{display:flex;align-items:center;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-size:11.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  padding:14px 24px;border:1px solid transparent;
+  transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s,box-shadow .3s;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--gold);color:#0A0D13;border-color:var(--gold)}
+.btn-solid:hover{background:var(--gold-2);border-color:var(--gold-2);box-shadow:0 12px 30px -14px rgba(198,161,91,.75)}
+.btn-ghost{color:var(--paper);border-color:rgba(255,255,255,.26)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-3);border-color:var(--gold-dim)}
+.btn-line{color:var(--text);border-color:rgba(21,24,29,.24)}
+.btn-line:hover{border-color:#8A6B2F;color:#8A6B2F}
+.btn .arw{transition:transform .3s var(--ease)}
+.btn:hover .arw{transform:translateX(3px)}
+
+.burger{display:none;width:42px;height:38px;align-items:center;justify-content:center;border:1px solid var(--line-d)}
+.burger span{display:block;width:18px;height:1.5px;background:var(--paper);position:relative;transition:.3s var(--ease)}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--paper);transition:.3s var(--ease)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+.mobile-nav{display:none;border-top:1px solid var(--line-d);background:var(--ink-2)}
+.mobile-nav.is-open{display:block}
+.mobile-nav a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C8CCD4;
+}
+.mobile-nav a span{color:var(--gold);font-size:11px;letter-spacing:.1em}
+.mobile-nav .mcta{padding-block:20px 24px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 640px at 78% 8%,rgba(198,161,91,.13),transparent 62%),
+    radial-gradient(900px 700px at 8% 96%,rgba(22,35,60,.85),transparent 66%),
+    linear-gradient(168deg,#080C14 0%,#0A101B 44%,#080C14 100%);
+  color:var(--paper);
+  padding-block:clamp(52px,7vw,88px) 0;
+  border-bottom:1px solid var(--line-d);
+}
+/* faint star field */
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(circle at 12% 22%,rgba(255,255,255,.55) 0 .7px,transparent 1px),
+    radial-gradient(circle at 32% 68%,rgba(255,255,255,.42) 0 .6px,transparent 1px),
+    radial-gradient(circle at 58% 14%,rgba(255,255,255,.5) 0 .7px,transparent 1px),
+    radial-gradient(circle at 74% 46%,rgba(255,255,255,.36) 0 .6px,transparent 1px),
+    radial-gradient(circle at 88% 24%,rgba(255,255,255,.5) 0 .7px,transparent 1px),
+    radial-gradient(circle at 46% 90%,rgba(255,255,255,.3) 0 .6px,transparent 1px),
+    radial-gradient(circle at 94% 74%,rgba(255,255,255,.42) 0 .6px,transparent 1px),
+    radial-gradient(circle at 22% 44%,rgba(255,255,255,.3) 0 .6px,transparent 1px);
+  background-size:520px 520px,680px 680px,760px 760px,600px 600px,540px 540px,720px 720px,640px 640px,500px 500px;
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+  padding-bottom:clamp(44px,6vw,76px);
+}
+.hero h1{
+  font-size:clamp(2.55rem,6vw,5.05rem);
+  letter-spacing:-.028em;line-height:.99;margin:0 0 26px;max-width:13ch;
+}
+.hero h1 .it{font-style:italic;color:var(--gold-2)}
+.hero-sub{
+  font-size:clamp(.98rem,1.12vw,1.09rem);line-height:1.8;color:#AEB4BE;
+  max-width:47ch;margin:0 0 34px;
+}
+.hero-sub b{color:#E6E8EC;font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-lt);
+}
+.hero-meta i{
+  width:3px;height:3px;border-radius:50%;background:var(--gold);display:inline-block;
+  margin-right:9px;vertical-align:middle;
+}
+
+/* compass art */
+.compass-stage{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;max-width:520px;margin-inline:auto;width:100%}
+.compass-stage .ring-glow{
+  position:absolute;inset:8%;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,rgba(198,161,91,.19),transparent 66%);
+  filter:blur(18px);
+}
+.compass{width:100%;height:auto;position:relative;z-index:2}
+.spin-slow{transform-origin:100px 100px;animation:spin 300s linear infinite}
+.spin-slower{transform-origin:100px 100px;animation:spin 520s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.compass-cap{
+  position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);
+  font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(198,161,91,.72);
+  white-space:nowrap;
+}
+
+/* credential bar */
+.credbar{
+  position:relative;z-index:2;
+  border-top:1px solid var(--line-d);
+  display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;
+  gap:0;
+}
+.credbar span{
+  position:relative;
+  padding:22px clamp(18px,3vw,40px) 22px 0;
+  margin-right:clamp(18px,3vw,40px);
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-lt);
+  display:inline-flex;align-items:center;gap:clamp(16px,2.6vw,34px);
+}
+.credbar span::after{
+  content:"";width:4px;height:4px;background:var(--gold);transform:rotate(45deg);
+  opacity:.85;position:absolute;right:0;
+}
+.credbar span:last-child{margin-right:0;padding-right:0}
+.credbar span:last-child::after{display:none}
+
+/* ---------- marquee ---------- */
+.marquee{
+  background:var(--ink-2);border-bottom:1px solid var(--line-d);
+  overflow:hidden;padding-block:15px;position:relative;
+}
+.marquee::before,.marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:120px;z-index:3;pointer-events:none;
+}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--ink-2),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--ink-2),transparent)}
+.marquee-track{display:flex;width:max-content;animation:slide 46s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marquee-track span{
+  display:inline-flex;align-items:center;gap:26px;padding-inline:26px;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(247,244,237,.6);
+  white-space:nowrap;
+}
+.marquee-track span::after{content:"";width:4px;height:4px;background:var(--gold);transform:rotate(45deg);opacity:.8}
+
+/* ---------- section shells ---------- */
+.sec{padding-block:clamp(64px,9vw,124px)}
+.sec-head{max-width:760px;margin-bottom:clamp(38px,5vw,62px)}
+.sec-head p{margin:20px 0 0}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center p{margin-inline:auto}
+
+/* ---------- firm ---------- */
+.firm-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(34px,5vw,76px);align-items:start}
+.firm-body p{margin:0 0 20px;color:var(--muted);line-height:1.82;font-size:1.02rem}
+.firm-body p:first-of-type{
+  font-family:var(--serif);font-size:clamp(1.16rem,1.7vw,1.45rem);line-height:1.55;color:var(--text);
+  letter-spacing:-.01em;
+}
+.firm-body p:last-child{margin-bottom:0}
+
+.factcard{
+  background:var(--paper-2);border:1px solid var(--line-l);
+  padding:clamp(26px,3vw,38px);position:relative;
+}
+.factcard::before{
+  content:"";position:absolute;top:-1px;left:-1px;width:52px;height:52px;
+  border-top:1px solid var(--gold);border-left:1px solid var(--gold);
+}
+.factcard::after{
+  content:"";position:absolute;bottom:-1px;right:-1px;width:52px;height:52px;
+  border-bottom:1px solid var(--gold);border-right:1px solid var(--gold);
+}
+.factcard h4{
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-family:var(--sans);
+  font-weight:500;color:#8A6B2F;margin-bottom:22px;
+}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px dashed rgba(21,24,29,.16);font-size:13.5px}
+.facts li:last-child{border-bottom:0;padding-bottom:0}
+.facts .k{color:var(--muted);letter-spacing:.03em}
+.facts .v{text-align:right;font-weight:500;color:var(--text)}
+.factcard .fc-note{margin-top:22px;font-size:12px;line-height:1.7;color:var(--muted)}
+
+/* ---------- practice areas ---------- */
+.practice{background:linear-gradient(180deg,#080C14,#0A111C 50%,#080C14)}
+.pg-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line-d);border-left:1px solid var(--line-d);
+}
+.pcard{
+  position:relative;padding:clamp(24px,2.6vw,34px) clamp(20px,2.2vw,28px) clamp(28px,3vw,38px);
+  border-right:1px solid var(--line-d);border-bottom:1px solid var(--line-d);
+  transition:background .4s var(--ease);overflow:hidden;
+}
+.pcard::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(420px 220px at 50% 0%,rgba(198,161,91,.13),transparent 70%);
+  opacity:0;transition:opacity .45s var(--ease);
+}
+.pcard:hover{background:rgba(255,255,255,.022)}
+.pcard:hover::after{opacity:1}
+.pcard .num{
+  font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;margin-bottom:30px;
+}
+.pcard .num::after{content:"";height:1px;flex:1;background:var(--gold-faint)}
+.pcard .ico{width:30px;height:30px;margin-bottom:18px;color:var(--gold);opacity:.92;transition:transform .45s var(--ease)}
+.pcard:hover .ico{transform:translateY(-3px)}
+.pcard h3{color:var(--paper);margin-bottom:11px}
+.pcard p{margin:0;font-size:13px;line-height:1.72;color:var(--muted-lt)}
+.pcard .plist{margin:14px 0 0;padding:0;list-style:none;font-size:12px;color:#8A909B;letter-spacing:.02em}
+.pcard .plist li{position:relative;padding-left:13px;line-height:1.9}
+.pcard .plist li::before{content:"";position:absolute;left:0;top:.82em;width:3px;height:3px;background:var(--gold-dim);transform:rotate(45deg)}
+.practice .tail{
+  display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  margin-top:clamp(30px,4vw,46px);
+}
+.practice .tail p{margin:0;font-size:13.5px;color:var(--muted-lt);max-width:56ch}
+
+/* ---------- leadership ---------- */
+.lead-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(32px,5vw,70px);align-items:center}
+.medallion{position:relative;aspect-ratio:1/1;max-width:400px;margin-inline:auto;width:100%}
+.medallion .frame{
+  position:absolute;inset:0;border:1px solid var(--line-l);border-radius:50%;
+}
+.medallion .frame.inner{inset:9%;border-color:rgba(198,161,91,.4)}
+.medallion .core{
+  position:absolute;inset:16%;border-radius:50%;
+  background:
+    radial-gradient(circle at 32% 26%,rgba(255,255,255,.9),transparent 44%),
+    linear-gradient(155deg,#1B2840,#0B1220 58%,#080C14);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 70px -34px rgba(8,12,20,.7),inset 0 0 0 1px rgba(198,161,91,.22);
+  overflow:hidden;
+}
+.medallion .core svg{width:64%;height:auto;opacity:.96}
+.medallion .badge{
+  position:absolute;bottom:2%;left:50%;transform:translateX(-50%);
+  background:var(--paper);border:1px solid var(--line-l);
+  padding:9px 18px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A6B2F;
+  white-space:nowrap;
+}
+.lead-name{font-size:clamp(1.9rem,3.3vw,2.9rem);line-height:1.03;margin:0 0 6px}
+.lead-role{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8A6B2F;margin-bottom:26px}
+.lead-quote{
+  font-family:var(--serif);font-size:clamp(1.08rem,1.5vw,1.28rem);line-height:1.62;
+  color:var(--text);border-left:1px solid var(--gold);padding-left:20px;margin:0 0 28px;
+}
+.creds{display:grid;gap:0;margin:0}
+.cred{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--line-l);align-items:baseline}
+.cred dt{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A6B2F;margin:0}
+.cred dd{margin:0;font-size:13.5px;line-height:1.68;color:var(--muted)}
+.cred dd b{color:var(--text);font-weight:500}
+
+/* ---------- why us ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,44px)}
+.why h3{color:var(--paper);margin-bottom:12px;padding-top:20px;position:relative}
+.why h3::before{content:"";position:absolute;top:0;left:0;width:26px;height:1px;background:var(--gold)}
+.why p{margin:0;font-size:13px;line-height:1.75;color:var(--muted-lt)}
+.why .mark{font-family:var(--serif);font-size:40px;line-height:1;color:rgba(198,161,91,.24);margin-bottom:14px}
+.band{
+  margin-top:clamp(48px,6vw,74px);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);
+  padding-block:clamp(26px,3.4vw,38px);
+  display:flex;flex-wrap:wrap;gap:22px 46px;align-items:center;justify-content:space-between;
+}
+.band .tab{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--gold-2)}
+.band .coords{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-lt)}
+
+/* ---------- process ---------- */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-l)}
+.step{
+  padding:clamp(24px,2.8vw,34px) clamp(18px,2vw,26px) 0 0;position:relative;
+}
+.step + .step{padding-left:clamp(18px,2vw,26px);border-left:1px solid var(--line-l)}
+.step .sid{
+  font-family:var(--serif);font-size:clamp(2rem,3vw,2.7rem);line-height:1;color:rgba(198,161,91,.3);
+  margin-bottom:18px;
+}
+.step h3{margin-bottom:10px}
+.step p{margin:0;font-size:13px;line-height:1.74;color:var(--muted)}
+
+/* ---------- contact ---------- */
+.contact{background:linear-gradient(180deg,#080C14,#0B1220)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(34px,5vw,66px);align-items:start}
+.cinfo{display:grid;gap:0;margin-top:8px}
+.crow{
+  display:grid;grid-template-columns:132px 1fr;gap:18px;
+  padding:17px 0;border-top:1px solid var(--line-d);align-items:baseline;
+}
+.crow .ck{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.crow .cv{font-size:14px;line-height:1.68;color:#D8DBE1}
+.crow .cv a{border-bottom:1px solid rgba(198,161,91,.32);transition:color .25s,border-color .25s}
+.crow .cv a:hover{color:var(--gold-2);border-color:var(--gold-2)}
+.crow .cv small{display:block;font-size:11.5px;color:var(--muted-lt);margin-top:4px;letter-spacing:.02em}
+
+.formcard{background:rgba(255,255,255,.028);border:1px solid var(--line-d);padding:clamp(26px,3vw,40px);position:relative}
+.formcard::before{content:"";position:absolute;top:0;left:0;height:2px;width:88px;background:var(--gold)}
+.formcard h3{color:var(--paper);margin-bottom:8px}
+.formcard .fhint{margin:0 0 26px;font-size:12.5px;color:var(--muted-lt);line-height:1.7}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+.field input,.field select,.field textarea{
+  width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line-d);
+  color:var(--paper);padding:13px 14px;font:inherit;font-size:14px;border-radius:0;
+  transition:border-color .25s,background .25s;
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input::placeholder,.field textarea::placeholder{color:#6E7580}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:0;border-color:var(--gold);background:rgba(255,255,255,.06);
+}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23C6A15B' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field select option{background:#0C1320;color:var(--paper)}
+.formcard .btn{width:100%;margin-top:6px}
+.formcard .fnote{margin:16px 0 0;font-size:11px;line-height:1.65;color:#7C838E}
+
+/* ---------- footer ---------- */
+.footer{background:#05080E;border-top:1px solid var(--line-d);padding-block:clamp(44px,5vw,64px) 30px}
+.f-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:clamp(28px,4vw,54px);padding-bottom:44px}
+.f-brand .brand{margin-bottom:18px}
+.f-brand p{margin:0;font-size:12.5px;line-height:1.78;color:#7E858F;max-width:36ch}
+.f-col h5{
+  margin:0 0 16px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;font-family:var(--sans);
+}
+.f-col a,.f-col p{display:block;margin:0 0 11px;font-size:12.5px;color:#8A919B;transition:color .25s}
+.f-col a:hover{color:var(--gold-2)}
+.f-bottom{
+  border-top:1px solid var(--line-d);padding-top:24px;
+  display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;
+  font-size:11px;color:#666D77;letter-spacing:.02em;
+}
+.f-bottom .sig{font-family:var(--serif);font-style:italic;font-size:12.5px;color:#8A919B}
+.f-bottom .sig b{font-style:normal;font-weight:500;color:var(--gold-2)}
+
+/* ---------- reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
+
+/* ---------- responsive ---------- */
+@media(max-width:1080px){
+  .pg-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line-l);margin-top:26px;padding-top:26px}
+  .step:nth-child(4){border-top:1px solid var(--line-l);margin-top:26px;padding-top:26px}
+}
+@media(max-width:900px){
+  .nav,.hdr-cta .btn{display:none}
+  .burger{display:flex}
+  .hero-grid{grid-template-columns:1fr}
+  .compass-stage{max-width:290px;margin-top:4px;order:-1}
+  .hero h1{max-width:18ch}
+  .firm-grid,.lead-grid,.contact-grid{grid-template-columns:1fr}
+  .medallion{max-width:300px}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .f-brand{grid-column:1/-1}
+  .credbar{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .credbar span{padding:15px 0;margin-right:0;border-top:1px solid var(--line-d);font-size:9.5px}
+  .credbar span::after{display:none}
+  .credbar span:nth-child(1),.credbar span:nth-child(2){border-top:0}
+}
+@media(max-width:620px){
+  .notice .wrap{padding-block:7px 8px;font-size:10px;gap:8px}
+  .notice .long{display:none}
+  .pg-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .step{padding-right:0}
+  .step + .step{border-left:0;padding-left:0;border-top:1px solid var(--line-l);margin-top:24px;padding-top:24px}
+  .step:nth-child(3),.step:nth-child(4){margin-top:24px;padding-top:24px}
+  .cred{grid-template-columns:1fr;gap:6px}
+  .crow{grid-template-columns:1fr;gap:7px}
+  .hero-meta{font-size:9.5px;gap:8px 16px}
+  .band{gap:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ CONCEPT NOTICE ══════════════ -->
+<div class="notice" id="notice">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <span><b>Design concept</b> prepared for review<span class="long"> by Midex Edits · not the firm's official website</span></span>
+  </div>
+  <button type="button" aria-label="Dismiss notice" onclick="document.getElementById('notice').classList.add('is-hidden')">✕</button>
+</div>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="site-header" id="hdr">
+  <div class="wrap hdr">
+    <a class="brand" href="#top" aria-label="Polaris Solicitors — concept homepage">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="#C6A15B" stroke-opacity=".38"/>
+        <circle cx="20" cy="20" r="13" fill="none" stroke="#C6A15B" stroke-opacity=".2"/>
+        <path d="M20 3.5l2.9 12.2L35.5 20l-12.6 4.3L20 36.5l-2.9-12.2L4.5 20l12.6-4.3z" fill="#C6A15B"/>
+        <path d="M20 3.5l2.9 12.2L35.5 20H20z" fill="#E4CB96"/>
+        <circle cx="20" cy="20" r="2.1" fill="#080C14"/>
+      </svg>
+      <span class="brand-txt">
+        <span class="brand-name">Polaris</span>
+        <span class="brand-sub">Solicitors · Abuja</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#firm">The Firm</a>
+      <a href="#practice">Practice</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hdr-cta">
+      <a class="btn btn-solid" href="#contact">Request a Consultation</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mnav">
+    <div class="wrap">
+      <a href="#firm">The Firm <span>01</span></a>
+      <a href="#practice">Practice Areas <span>02</span></a>
+      <a href="#leadership">Leadership <span>03</span></a>
+      <a href="#process">Process <span>04</span></a>
+      <a href="#contact">Contact <span>05</span></a>
+      <div class="mcta"><a class="btn btn-solid" href="#contact" style="display:flex">Request a Consultation</a></div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Wuse 2, Abuja · Established 2013</p>
+        <h1>A firm point of <span class="it">reference</span> in Nigerian law.</h1>
+        <p class="hero-sub">
+          Polaris Solicitors is a full-service corporate and commercial practice in the heart of Abuja,
+          advising businesses, institutions and private clients <b>across all 36 states and the FCT</b> —
+          with the regulatory judgement of counsel who has sat on the other side of the desk.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#contact">Request a Consultation <svg class="arw" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.3"/></svg></a>
+          <a class="btn btn-ghost" href="tel:+2348034358887">Call 0803 435 8887</a>
+        </div>
+        <div class="hero-meta">
+          <span><i></i>Corporate &amp; Commercial</span>
+          <span><i></i>Dispute Resolution</span>
+          <span><i></i>Property &amp; Regulatory</span>
+        </div>
+      </div>
+
+      <!-- compass -->
+      <div class="compass-stage" aria-hidden="true">
+        <div class="ring-glow"></div>
+        <svg class="compass" viewBox="0 0 200 200" role="img">
+          <defs>
+            <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E7D2A4"/><stop offset=".5" stop-color="#C6A15B"/><stop offset="1" stop-color="#8E6E33"/>
+            </linearGradient>
+          </defs>
+
+          <!-- outer rings -->
+          <circle cx="100" cy="100" r="97" fill="none" stroke="#C6A15B" stroke-opacity=".26"/>
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#C6A15B" stroke-opacity=".14"/>
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#C6A15B" stroke-opacity=".2"/>
+
+          <!-- tick ring -->
+          <g stroke="#C6A15B" stroke-opacity=".5">
+            <g id="ticks">
+              <path d="M100 6v6"/><path d="M100 188v6"/><path d="M6 100h6"/><path d="M188 100h6"/>
+              <path d="M133.4 12.3l-2 5.7"/><path d="M66.6 12.3l2 5.7"/>
+              <path d="M133.4 187.7l-2-5.7"/><path d="M66.6 187.7l2-5.7"/>
+              <path d="M12.3 66.6l5.7 2"/><path d="M12.3 133.4l5.7-2"/>
+              <path d="M187.7 66.6l-5.7 2"/><path d="M187.7 133.4l-5.7-2"/>
+              <path d="M156.6 20.1l-3.6 4.7"/><path d="M43.4 20.1l3.6 4.7"/>
+              <path d="M179.9 43.4l-4.7 3.6"/><path d="M20.1 43.4l4.7 3.6"/>
+              <path d="M179.9 156.6l-4.7-3.6"/><path d="M20.1 156.6l4.7-3.6"/>
+              <path d="M156.6 179.9l-3.6-4.7"/><path d="M43.4 179.9l3.6-4.7"/>
+            </g>
+            <use href="#ticks" transform="rotate(15 100 100)" opacity=".4"/>
+          </g>
+
+          <!-- slow rotating inner ring -->
+          <g class="spin-slower">
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#C6A15B" stroke-opacity=".16" stroke-dasharray="1 7"/>
+            <g fill="#C6A15B" fill-opacity=".55">
+              <circle cx="100" cy="24" r="1.1"/><circle cx="176" cy="100" r="1.1"/>
+              <circle cx="100" cy="176" r="1.1"/><circle cx="24" cy="100" r="1.1"/>
+            </g>
+          </g>
+
+          <!-- compass rose -->
+          <g class="spin-slow">
+            <!-- minor points -->
+            <path d="M100 30l7.5 62.5L100 100l-7.5-7.5z" fill="#C6A15B" fill-opacity=".22"/>
+            <path d="M170 100l-62.5 7.5L100 100l7.5-7.5z" fill="#C6A15B" fill-opacity=".22"/>
+            <path d="M100 170l-7.5-62.5L100 100l7.5 7.5z" fill="#C6A15B" fill-opacity=".22"/>
+            <path d="M30 100l62.5-7.5L100 100l-7.5 7.5z" fill="#C6A15B" fill-opacity=".22"/>
+            <!-- diagonal points -->
+            <path d="M149.5 50.5l-38 44L100 100l11.5-11.5z" fill="#C6A15B" fill-opacity=".14"/>
+            <path d="M149.5 149.5l-44-38L100 100l11.5 11.5z" fill="#C6A15B" fill-opacity=".14"/>
+            <path d="M50.5 149.5l38-44L100 100l-11.5 11.5z" fill="#C6A15B" fill-opacity=".14"/>
+            <path d="M50.5 50.5l44 38L100 100l-11.5-11.5z" fill="#C6A15B" fill-opacity=".14"/>
+            <!-- cardinal points (light / dark halves) -->
+            <path d="M100 34l9 57-9 9V34z" fill="url(#gGold)"/>
+            <path d="M100 34l-9 57 9 9V34z" fill="#C6A15B" fill-opacity=".45"/>
+            <path d="M166 100l-57 9-9-9h66z" fill="url(#gGold)"/>
+            <path d="M166 100l-57-9-9 9h66z" fill="#C6A15B" fill-opacity=".45"/>
+            <path d="M100 166l-9-57 9-9v66z" fill="url(#gGold)"/>
+            <path d="M100 166l9-57-9-9v66z" fill="#C6A15B" fill-opacity=".45"/>
+            <path d="M34 100l57-9 9 9H34z" fill="url(#gGold)"/>
+            <path d="M34 100l57 9 9-9H34z" fill="#C6A15B" fill-opacity=".45"/>
+          </g>
+
+          <!-- centre -->
+          <circle cx="100" cy="100" r="9" fill="#080C14" stroke="#C6A15B" stroke-opacity=".7"/>
+          <circle cx="100" cy="100" r="3" fill="#E7D2A4"/>
+
+          <!-- labels -->
+          <g fill="#C6A15B" fill-opacity=".85" font-family="Inter,Arial,sans-serif" font-size="6.4" letter-spacing="1.6" text-anchor="middle">
+            <text x="100" y="18">N</text><text x="100" y="189">S</text>
+            <text x="187" y="102.4">E</text><text x="13" y="102.4">W</text>
+          </g>
+        </svg>
+        <span class="compass-cap">Wuse 2 · Abuja · FCT</span>
+      </div>
+    </div>
+
+    <!-- credential bar (no figures — only what the firm already publishes) -->
+    <div class="credbar">
+      <span>Established 2013</span>
+      <span>Wuse 2, Abuja</span>
+      <span>All 36 States &amp; the FCT</span>
+      <span>Consultations by appointment</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MARQUEE ══════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Corporate &amp; Commercial</span><span>Litigation &amp; ADR</span><span>Intellectual Property</span><span>Property &amp; Real Estate</span><span>Banking &amp; Finance</span><span>Capital Markets</span><span>Regulatory Affairs</span><span>International Trade</span><span>Labour &amp; Industrial Relations</span>
+    <span>Corporate &amp; Commercial</span><span>Litigation &amp; ADR</span><span>Intellectual Property</span><span>Property &amp; Real Estate</span><span>Banking &amp; Finance</span><span>Capital Markets</span><span>Regulatory Affairs</span><span>International Trade</span><span>Labour &amp; Industrial Relations</span>
+  </div>
+</div>
+
+<!-- ══════════════ THE FIRM ══════════════ -->
+<section class="sec" id="firm">
+  <div class="wrap">
+    <div class="firm-grid">
+      <div class="firm-body reveal">
+        <p class="eyebrow on-paper">The Firm</p>
+        <h2 style="margin-bottom:26px">Thirteen years of counsel<br>built on <em>judgement</em>.</h2>
+        <p>Polaris Solicitors was founded in 2013 as a multidimensional business law practice — partners, associates and dedicated support staff, working from a modern office in the Wuse 2 commercial district of Abuja.</p>
+        <p>Our clients are founders and multinationals, developers and financial institutions, public bodies and private individuals. What they have in common is that the matter matters: a transaction that has to close cleanly, a regulator that has to be satisfied, a dispute that has to be resolved without derailing the business behind it.</p>
+        <p>We are built to be that fixed point — clear advice, disciplined process, and an honest view of the odds before you commit. From Lagos to Abuja and across all thirty-six states, we bring the same standard of diligence to every brief.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
+          <a class="btn btn-ink" href="#practice">Explore Practice Areas</a>
+          <a class="btn btn-line" href="#contact">Speak to the Firm</a>
+        </div>
+      </div>
+
+      <aside class="factcard reveal">
+        <h4>The Firm at a Glance</h4>
+        <ul class="facts">
+          <li><span class="k">Established</span><span class="v">2013</span></li>
+          <li><span class="k">Base</span><span class="v">Wuse 2, Abuja</span></li>
+          <li><span class="k">Coverage</span><span class="v">36 States &amp; FCT</span></li>
+          <li><span class="k">Practice</span><span class="v">Full-service corporate</span></li>
+          <li><span class="k">Hours</span><span class="v">Mon–Fri, 8am–5pm</span></li>
+          <li><span class="k">Consultations</span><span class="v">By appointment</span></li>
+        </ul>
+        <p class="fc-note">Consultations are by appointment at the chambers, and by video for clients outside Abuja.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRACTICE AREAS ══════════════ -->
+<section class="sec practice on-dark" id="practice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Practice Areas</p>
+      <h2>Eight disciplines.<br>One standard of <em class="gold">attention</em>.</h2>
+      <p class="lede" style="margin-top:22px">A full-service offering for clients who need a single counsel of record across the commercial life of a business.</p>
+    </div>
+
+    <div class="pg-grid">
+      <!-- 01 -->
+      <article class="pcard reveal">
+        <div class="num">01</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M4 27h24M6 27V13l10-6 10 6v14M12 27v-8h8v8"/>
+          <path d="M16 7v-4M14 3h4"/>
+        </svg>
+        <h3>Corporate &amp; Commercial</h3>
+        <p>Formation, governance and structuring for businesses that intend to grow without compliance debt.</p>
+        <ul class="plist">
+          <li>CAC incorporation &amp; restructuring</li>
+          <li>Shareholder &amp; investment agreements</li>
+          <li>Commercial contracts, NDAs, JVs</li>
+        </ul>
+      </article>
+
+      <!-- 02 -->
+      <article class="pcard reveal">
+        <div class="num">02</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M16 4v7M16 4l-3 3M16 4l3 3M6 20h20"/>
+          <path d="M6 20l-3 6a4 4 0 008 0l-3-6zM26 20l-3 6a4 4 0 008 0l-3-6z"/>
+          <path d="M16 11v9"/>
+        </svg>
+        <h3>Dispute Resolution</h3>
+        <p>Strategic advocacy in court, and where it serves the client better, an early settlement.</p>
+        <ul class="plist">
+          <li>Commercial &amp; civil litigation</li>
+          <li>Arbitration &amp; mediation</li>
+          <li>Debt recovery &amp; enforcement</li>
+        </ul>
+      </article>
+
+      <!-- 03 -->
+      <article class="pcard reveal">
+        <div class="num">03</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M16 3l3 7 7 .8-5.2 4.8 1.4 7L16 19l-6.2 3.6 1.4-7L6 10.8 13 10z"/>
+          <path d="M9 27h14"/>
+        </svg>
+        <h3>Intellectual Property</h3>
+        <p>Protecting the names, marks and inventions that make a business worth more than its balance sheet.</p>
+        <ul class="plist">
+          <li>Trademark &amp; patent filings</li>
+          <li>IP licensing &amp; assignment</li>
+          <li>Enforcement &amp; opposition</li>
+        </ul>
+      </article>
+
+      <!-- 04 -->
+      <article class="pcard reveal">
+        <div class="num">04</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M5 13l11-8 11 8M7 13v13h18V13"/>
+          <path d="M13 26v-8h6v8M4 26h24"/>
+        </svg>
+        <h3>Property &amp; Real Estate</h3>
+        <p>Conveyancing and development counsel that treats title risk as the first question, not the last.</p>
+        <ul class="plist">
+          <li>Title investigation &amp; perfection</li>
+          <li>Leases &amp; development agreements</li>
+          <li>Estate &amp; facility structuring</li>
+        </ul>
+      </article>
+
+      <!-- 05 -->
+      <article class="pcard reveal">
+        <div class="num">05</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M16 3l11 5v8c0 7-5 11-11 13-6-2-11-6-11-13V8z"/>
+          <path d="M11 16l4 4 7-8"/>
+        </svg>
+        <h3>Regulatory &amp; Government</h3>
+        <p>Navigating policy, licensing and the agencies that sit between a business and its market.</p>
+        <ul class="plist">
+          <li>Licensing &amp; permits</li>
+          <li>Regulatory compliance reviews</li>
+          <li>Policy &amp; stakeholder engagement</li>
+        </ul>
+      </article>
+
+      <!-- 06 -->
+      <article class="pcard reveal">
+        <div class="num">06</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M3 10h26M3 10v16h26V10M3 10l4-5h18l4 5"/>
+          <path d="M10 16h5M10 21h9M22 15v7"/>
+        </svg>
+        <h3>Banking &amp; Finance</h3>
+        <p>Transaction counsel shaped by first-hand knowledge of how lenders and regulators actually decide.</p>
+        <ul class="plist">
+          <li>Secured lending &amp; security perfection</li>
+          <li>Corporate finance &amp; advisory</li>
+          <li>Recovery &amp; restructuring</li>
+        </ul>
+      </article>
+
+      <!-- 07 -->
+      <article class="pcard reveal">
+        <div class="num">07</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <path d="M4 24l8-9 5 4 9-12"/>
+          <path d="M20 7h6v6M4 28h24"/>
+        </svg>
+        <h3>Capital Markets</h3>
+        <p>Support across securities, offerings and the regulatory steps that stand between a deal and a listing.</p>
+        <ul class="plist">
+          <li>Offer documentation</li>
+          <li>SEC &amp; exchange engagement</li>
+          <li>Investor &amp; disclosure compliance</li>
+        </ul>
+      </article>
+
+      <!-- 08 -->
+      <article class="pcard reveal">
+        <div class="num">08</div>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+          <circle cx="16" cy="16" r="12"/>
+          <path d="M4 16h24M16 4c4 4 4 20 0 24-4-4-4-20 0-24z"/>
+        </svg>
+        <h3>Trade &amp; Investment</h3>
+        <p>Cross-border support for investors and corporates entering, expanding within, or exiting the Nigerian market.</p>
+        <ul class="plist">
+          <li>Market entry structures</li>
+          <li>Cross-border agreements</li>
+          <li>Labour &amp; industrial relations</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="tail reveal">
+      <p>Notary, tax and probate matters are handled on instruction. If your matter is not listed, ask — the answer is usually yes.</p>
+      <a class="btn btn-ghost" href="#contact">Discuss your matter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LEADERSHIP ══════════════ -->
+<section class="sec" id="leadership">
+  <div class="wrap">
+    <div class="lead-grid">
+      <div class="medallion reveal" aria-hidden="true">
+        <div class="frame"></div>
+        <div class="frame inner"></div>
+        <div class="core">
+          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="46" stroke="#C6A15B" stroke-opacity=".3"/>
+            <path d="M60 8l5.4 22.6L88 35l-22.6 4.4L60 62l-5.4-22.6L32 35l22.6-4.4z" fill="#C6A15B" fill-opacity=".9"/>
+            <text x="60" y="80" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="30" letter-spacing="4" fill="#F7F4ED">HH</text>
+            <path d="M42 88h36" stroke="#C6A15B" stroke-opacity=".7"/>
+            <text x="60" y="100" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="5.6" letter-spacing="2.4" fill="#C6A15B">MANAGING PARTNER</text>
+          </svg>
+        </div>
+        <div class="badge">Called to the Bar · 2010</div>
+      </div>
+
+      <div class="reveal">
+        <p class="eyebrow on-paper">Leadership</p>
+        <h2 class="lead-name">Hassan Hussain, <span style="font-style:italic">Esq.</span></h2>
+        <div class="lead-role">Managing Partner · Polaris Solicitors</div>
+        <p class="lead-quote">“A good lawyer tells you what the law says. A useful one tells you what it means for the decision in front of you.”</p>
+        <dl class="creds">
+          <div class="cred"><dt>Practice</dt><dd>Corporate, commercial and civil litigation — with an <b>LL.M in Islamic Banking &amp; Finance</b>.</dd></div>
+          <div class="cred"><dt>Before</dt><dd>Manager at the <b>Central Bank of Nigeria</b>; Kutigi Chambers; Umar Bangari &amp; Associates.</dd></div>
+          <div class="cred"><dt>Of counsel</dt><dd>Consultant to <b>Kayode Sofola, SAN &amp; Associates</b> on key litigation matters.</dd></div>
+          <div class="cred"><dt>Membership</dt><dd>Nigerian Bar Association · International Bar Association · Pan African Lawyers Union · Nigerian Society of International Law.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY US ══════════════ -->
+<section class="sec on-dark" style="padding-block:clamp(58px,8vw,104px)">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:700px">
+      <p class="eyebrow">Why Clients Instruct Us</p>
+      <h2>What a client is really<br>buying when they retain <em class="gold">counsel</em>.</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why reveal">
+        <div class="mark">I</div>
+        <h3>Regulatory fluency</h3>
+        <p>Our managing partner spent years inside the Central Bank of Nigeria. That perspective changes how a file is prepared — and how quickly a regulator is satisfied.</p>
+      </div>
+      <div class="why reveal">
+        <div class="mark">II</div>
+        <h3>Nationwide reach</h3>
+        <p>An Abuja base with the capacity to appear and transact across all thirty-six states and the Federal Capital Territory, without handing your matter to a stranger.</p>
+      </div>
+      <div class="why reveal">
+        <div class="mark">III</div>
+        <h3>Commercial sense</h3>
+        <p>Advice is measured against the business outcome, not only the legal question. If a settlement serves you better than a fight, that is the recommendation you will hear.</p>
+      </div>
+      <div class="why reveal">
+        <div class="mark">IV</div>
+        <h3>Fees you can see</h3>
+        <p>Scope and fee basis agreed in writing before work begins. No invoice that arrives as a surprise after the matter has closed.</p>
+      </div>
+    </div>
+
+    <div class="band reveal">
+      <span class="tab">“Not just lawyers. Problem-solvers.”</span>
+      <span class="coords">Wuse 2 · Abuja · Federal Capital Territory</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROCESS ══════════════ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow on-paper">How We Work</p>
+      <h2>From first call to <em>resolution</em>.</h2>
+      <p class="lede" style="margin-top:20px">A defined path, so you always know which stage your matter is at and what happens next.</p>
+    </div>
+
+    <div class="proc-grid">
+      <div class="step reveal">
+        <div class="sid">01</div>
+        <h3>Consultation</h3>
+        <p>A focused first conversation — in chambers, by phone or by video. You leave with a clear view of your position, not a sales pitch.</p>
+      </div>
+      <div class="step reveal">
+        <div class="sid">02</div>
+        <h3>Assessment</h3>
+        <p>We review documents, identify the risks worth your attention, and set out the realistic routes available to you.</p>
+      </div>
+      <div class="step reveal">
+        <div class="sid">03</div>
+        <h3>Strategy &amp; Engagement</h3>
+        <p>Scope, fee basis and timeline agreed in writing. A named lead counsel takes ownership of the file from that point.</p>
+      </div>
+      <div class="step reveal">
+        <div class="sid">04</div>
+        <h3>Resolution</h3>
+        <p>Execution through to closing, judgment or settlement — with the file documented so you are never left holding loose ends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section class="sec contact on-dark" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Consultation</p>
+        <h2 style="margin-bottom:20px">Tell us what<br>you are <em class="gold">facing</em>.</h2>
+        <p class="lede" style="margin-bottom:34px">Send a short summary of your matter and we will respond with a clear view of how we can help — and what it would take.</p>
+
+        <div class="cinfo">
+          <div class="crow">
+            <span class="ck">Chambers</span>
+            <span class="cv">122Y Morija Close,<br>off Adetokunbo Ademola Crescent,<br>Wuse 2, Abuja 900288, FCT
+              <small><a href="https://maps.google.com/?q=122Y+Morija+Close+Wuse+2+Abuja" target="_blank" rel="noopener">Open in Maps</a></small></span>
+          </div>
+          <div class="crow">
+            <span class="ck">Telephone</span>
+            <span class="cv"><a href="tel:+2348034358887">0803 435 8887</a> · <a href="tel:+2348036771868">0803 677 1868</a>
+              <small>Mon–Fri, 8:00am – 5:00pm</small></span>
+          </div>
+          <div class="crow">
+            <span class="ck">WhatsApp</span>
+            <span class="cv"><a href="https://wa.me/2349020485947?text=Hello%20Polaris%20Solicitors%2C%20I%20would%20like%20to%20discuss%20a%20matter." target="_blank" rel="noopener">0902 048 5947</a>
+              <small>Message the firm directly</small></span>
+          </div>
+          <div class="crow">
+            <span class="ck">Email</span>
+            <span class="cv"><a href="mailto:legal@polarissolicitors.com">legal@polarissolicitors.com</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="formcard reveal">
+        <h3>Request a consultation</h3>
+        <p class="fhint">Two lines is enough to start. Nothing here is stored on this page — your summary opens in WhatsApp for you to send.</p>
+        <form id="cform" novalidate>
+          <div class="field">
+            <label for="fname">Your name</label>
+            <input id="fname" name="name" type="text" placeholder="e.g. A. Bello" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="fmatter">Area of law</label>
+            <select id="fmatter" name="matter">
+              <option>Corporate &amp; Commercial</option>
+              <option>Dispute Resolution / Litigation</option>
+              <option>Intellectual Property</option>
+              <option>Property &amp; Real Estate</option>
+              <option>Regulatory &amp; Government Relations</option>
+              <option>Banking &amp; Finance</option>
+              <option>Capital Markets</option>
+              <option>Trade &amp; Investment</option>
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fmsg">Brief summary</label>
+            <textarea id="fmsg" name="message" placeholder="A short description of the matter and any deadline you are working to." required></textarea>
+          </div>
+          <button class="btn btn-solid" type="submit">Send via WhatsApp <svg class="arw" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="M0 4h12M9 1l3 3-3 3" stroke="currentColor" stroke-width="1.3"/></svg></button>
+          <p class="fnote">Sending a message does not create a solicitor–client relationship. Please do not send confidential documents until the firm has confirmed it can act.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18.5" fill="none" stroke="#C6A15B" stroke-opacity=".38"/>
+            <path d="M20 3.5l2.9 12.2L35.5 20l-12.6 4.3L20 36.5l-2.9-12.2L4.5 20l12.6-4.3z" fill="#C6A15B"/>
+            <path d="M20 3.5l2.9 12.2L35.5 20H20z" fill="#E4CB96"/>
+            <circle cx="20" cy="20" r="2.1" fill="#080C14"/>
+          </svg>
+          <span class="brand-txt">
+            <span class="brand-name">Polaris</span>
+            <span class="brand-sub">Solicitors · Abuja</span>
+          </span>
+        </a>
+        <p>A full-service corporate and commercial law practice in Wuse 2, Abuja — advising clients across all 36 states and the Federal Capital Territory since 2013.</p>
+      </div>
+
+      <div class="f-col">
+        <h5>Navigate</h5>
+        <a href="#firm">The Firm</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#process">Our Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="f-col">
+        <h5>Chambers</h5>
+        <p>122Y Morija Close<br>Wuse 2, Abuja 900288</p>
+        <a href="tel:+2348034358887">0803 435 8887</a>
+        <a href="mailto:legal@polarissolicitors.com">legal@polarissolicitors.com</a>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <span>© <span id="yr">2026</span> Polaris Solicitors. All rights reserved.</span>
+      <span class="sig">Concept design by <b>Midex Edits</b> · prepared for review</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* concept bar quietly retires after the first scroll or 9s */
+  var notice = document.getElementById('notice');
+  function retireNotice(){
+    if (!notice || notice.classList.contains('is-hidden')) return;
+    notice.style.transition = 'opacity .5s ease, max-height .5s ease';
+    notice.style.opacity = '0'; notice.style.maxHeight = '0'; notice.style.overflow = 'hidden';
+    setTimeout(function(){ notice.classList.add('is-hidden'); }, 520);
+    window.removeEventListener('scroll', retireNotice);
+  }
+  window.addEventListener('scroll', function(){ if (window.scrollY > 120) retireNotice(); }, {passive:true});
+  setTimeout(retireNotice, 9000);
+
+  /* year */
+  var y = document.getElementById('yr'); if (y) y.textContent = new Date().getFullYear();
+
+  /* header shadow on scroll */
+  var hdr = document.getElementById('hdr');
+  var onScroll = function(){ hdr.classList.toggle('is-scrolled', window.scrollY > 24); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* mobile nav */
+  var burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mnav.classList.toggle('is-open', !open);
+  });
+  mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      burger.setAttribute('aria-expanded','false');
+      mnav.classList.remove('is-open');
+    });
+  });
+
+  /* scroll reveal — deterministic, jump-safe (no IntersectionObserver races) */
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function revealCheck(){
+    var vh = window.innerHeight || 800;
+    items = items.filter(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.94 && r.bottom > -60){ el.classList.add('in'); return false; }
+      return true;
+    });
+  }
+  var ticking = false;
+  function onScrollReveal(){
+    if (!ticking){ ticking = true; requestAnimationFrame(function(){ revealCheck(); ticking = false; }); }
+  }
+  window.addEventListener('scroll', onScrollReveal, {passive:true});
+  window.addEventListener('resize', onScrollReveal);
+  window.addEventListener('load', function(){ revealCheck(); setTimeout(revealCheck, 500); });
+  window.addEventListener('hashchange', function(){ setTimeout(revealCheck, 80); setTimeout(revealCheck, 600); });
+  document.addEventListener('click', function(e){
+    if (e.target.closest && e.target.closest('a[href^="#"]')){ setTimeout(revealCheck, 80); setTimeout(revealCheck, 600); }
+  });
+  revealCheck();
+  setTimeout(revealCheck, 400);
+  setTimeout(revealCheck, 1200);
+
+  /* consultation form → WhatsApp */
+  var form = document.getElementById('cform');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = document.getElementById('fname').value.trim();
+    var matter = document.getElementById('fmatter').value;
+    var msg = document.getElementById('fmsg').value.trim();
+    if (!name || !msg){
+      var missing = !name ? document.getElementById('fname') : document.getElementById('fmsg');
+      missing.focus();
+      missing.style.borderColor = '#C6564B';
+      setTimeout(function(){ missing.style.borderColor = ''; }, 1600);
+      return;
+    }
+    var text =
+      'Hello Polaris Solicitors, I would like to request a consultation.%0A%0A' +
+      'Name: ' + encodeURIComponent(name) + '%0A' +
+      'Area of law: ' + encodeURIComponent(matter) + '%0A%0A' +
+      encodeURIComponent(msg);
+    window.open('https://wa.me/2349020485947?text=' + text, '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
